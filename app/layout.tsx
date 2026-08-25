@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     description: "アイデアを、見える形へ。",
     images: [
       {
-        url: "/og.png",
+        url: "/images/huraneko-icon.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "フラネコ - アイデアを、見える形へ。",
       },
     ],
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "フラネコ | Personal Homepage",
-    description: "アイデアを、見える形へ。",
-    images: ["/og.png"],
+    description: "アイデアを、遊べる形へ。",
+    images: ["/images/huraneko-icon.png"],
   },
   icons: {
     icon: "/favicon.svg",

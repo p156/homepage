@@ -50,58 +50,44 @@ const sections = [
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-[#f7f3ec] px-6 py-8 text-[#1d1b18] sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-4xl">
-        <nav className="flex items-center justify-between border-b border-[#1d1b18]/15 pb-5">
-          <Link className="font-semibold tracking-wide" href="/">
+    <main className="privacy-page">
+      <div className="privacy-content">
+        <nav className="game-nav">
+          <Link className="game-brand" href="/">
             huraneko
           </Link>
-          <Link className="text-sm text-[#4f4a42] transition hover:text-[#1d1b18]" href="/">
-            Home
-          </Link>
+          <div className="game-nav-links">
+            <Link href="/">Home</Link>
+          </div>
         </nav>
 
-        <header className="py-14 sm:py-20">
-          <p className="text-sm uppercase tracking-[0.28em] text-[#26706c]">
-            Privacy Policy
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-6xl">
-            プライバシーポリシー
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5d554b]">
+        <header className="privacy-header">
+          <p className="section-label">Privacy Policy</p>
+          <h1>プライバシーポリシー</h1>
+          <p className="game-lead">
             フラネコのサイトおよび提供するアプリにおける、情報の取り扱いについて定めます。
           </p>
-          <p className="mt-4 text-sm text-[#6d6559]">制定日: 2026年8月25日</p>
+          <p className="section-copy">制定日: 2026年8月25日</p>
         </header>
 
-        <div className="space-y-5">
+        <div className="privacy-stack">
           {sections.map((section) => (
-            <section
-              className="rounded-3xl border border-[#1d1b18]/10 bg-white/55 p-6 shadow-sm"
-              key={section.title}
-            >
-              <h2 className="text-2xl font-semibold">{section.title}</h2>
-              <div className="mt-4 space-y-3 leading-8 text-[#5d554b]">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
+            <section className="privacy-card" key={section.title}>
+              <h2>{section.title}</h2>
+              {section.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </section>
           ))}
-        </div>
 
-        <section className="mt-5 rounded-3xl bg-[#1d1b18] p-6 text-[#fff9ed]">
-          <h2 className="text-2xl font-semibold">お問い合わせ</h2>
-          <p className="mt-4 leading-8 text-[#d8d0c3]">
-            本ポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。
-          </p>
-          <a
-            className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#1d1b18] transition hover:bg-[#f4d384]"
-            href="mailto:hello@example.com"
-          >
-            hello@example.com
-          </a>
-        </section>
+          <section className="privacy-card">
+            <h2>お問い合わせ</h2>
+            <p>本ポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。</p>
+            <a className="game-button primary" href="mailto:hello@example.com">
+              hello@example.com
+            </a>
+          </section>
+        </div>
       </div>
     </main>
   );

@@ -6,70 +6,69 @@
     <title>フラネコ | Personal Homepage</title>
     <meta name="description" content="アイデア、物語、画像、Web制作を見える形にしていくための個人ホームページです。">
     <meta property="og:title" content="フラネコ | Personal Homepage">
-    <meta property="og:description" content="アイデアを、見える形へ。">
-    <meta property="og:image" content="og.png">
+    <meta property="og:description" content="アイデアを、遊べる形へ。">
+    <meta property="og:image" content="images/huraneko-icon.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main>
-      <section class="hero">
-        <nav class="nav">
-          <a class="brand" href="#top">huraneko</a>
-          <div class="nav-links">
+    <main class="game-page">
+      <section class="game-hero" id="top">
+        <nav class="game-nav">
+          <a class="game-brand" href="#top">huraneko</a>
+          <div class="game-nav-links">
             <a href="#about">About</a>
             <a href="#career">Career</a>
-            <a href="#works">Notes</a>
+            <a href="#notes">Notes</a>
             <a href="#contact">Contact</a>
             <a href="privacy-policy/">Privacy</a>
           </div>
         </nav>
 
-        <div id="top" class="hero-grid">
-          <div>
-            <p class="eyebrow">Personal homepage / first draft</p>
-            <h1>アイデアを、<span>見える形へ。</span></h1>
-            <p class="lead">
-              制作したいものの輪郭をつかみ、物語、画像、Web、ローカル環境まで、
-              手を動かしながら形にしていくためのホームページです。
+        <div class="game-shell">
+          <div class="game-copy">
+            <p class="game-kicker">PLAYER PROFILE / FIRST SAVE</p>
+            <h1>アイデアを、<span>遊べる形へ。</span></h1>
+            <p class="game-lead">
+              物語、画像、Web、ローカル環境。
+              <br>
+              作りたいものの輪郭をつかみ、
+              試しながら少しずつ形にしていく
+              <br>
+              フラネコのホームページです。
             </p>
-            <div class="actions">
-              <a class="button button-primary" href="#works">今の状態を見る</a>
-              <a class="button button-secondary" href="#contact">相談する</a>
+            <div class="game-actions">
+              <a class="game-button primary" href="#career">経歴を見る</a>
+              <a class="game-button secondary" href="#notes">活動メモ</a>
             </div>
           </div>
 
-          <div class="visual" aria-label="制作を象徴するビジュアル">
-            <div class="shape-red"></div>
-            <div class="shape-teal"></div>
-            <div class="shape-card">
-              <div class="card-top">
-                <span>Now shaping</span>
-                <span>2026</span>
-              </div>
-              <div class="card-title">
-                <div class="bar"></div>
-                Web,<br>
-                stories,<br>
-                visuals.
-              </div>
-              <div class="strengths">
-                <div class="strength">企画を形にする</div>
-                <div class="strength">制作環境を整える</div>
-                <div class="strength">物語性を見つける</div>
-              </div>
+          <aside class="status-window" aria-label="フラネコのステータス">
+            <div class="window-bar">
+              <span>STATUS</span>
+              <span>LV. 2026</span>
             </div>
-          </div>
+            <div class="avatar-tile">
+              <img class="avatar-image" alt="フラネコのアイコン" src="images/huraneko-icon.png">
+            </div>
+            <h2>フラネコ</h2>
+            <p>ゲーム表現とシステム開発のあいだで、作る力を育成中。</p>
+            <div class="stat-grid">
+              <div class="stat"><span>FOCUS</span><strong>Web / App</strong></div>
+              <div class="stat"><span>CLASS</span><strong>Engineer</strong></div>
+              <div class="stat"><span>STYLE</span><strong>Game Design</strong></div>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section id="about" class="dark">
-        <div class="section-inner section-grid">
-          <p class="label">About</p>
+      <section class="game-section dark" id="about">
+        <div class="section-inner about-center">
+          <p class="section-label">About</p>
           <div>
-            <h2>まだ曖昧な構想からでも、最初の公開できる形まで進めます。</h2>
-            <p class="body-copy">
+            <h2>まだ曖昧な構想でも、<br>まずは動く形にしてみる。</h2>
+            <p class="section-copy">
               このページはテスト用の初稿です。公開できる範囲の経験だけを載せながら、
               プロフィール写真、好きなこと、制作メモ、SNSリンクなどで少しずつ育てられます。
             </p>
@@ -77,36 +76,36 @@
         </div>
       </section>
 
-      <section id="career" class="section">
+      <section class="game-section" id="career">
         <div class="section-inner">
-          <div class="section-grid divider">
+          <div class="section-head">
             <div>
-              <p class="label">Career</p>
+              <p class="section-label">Quest Log</p>
               <h2>これまでの歩み</h2>
             </div>
-            <p class="body-copy">
+            <p>
               学びから現場支援、金融系システムエンジニアへ。公開できる範囲で、
               経歴と実務経験を整理しています。
             </p>
           </div>
 
-          <div class="timeline">
-            <article class="timeline-item">
-              <p class="year">2022.03</p>
+          <div class="quest-list">
+            <article class="quest">
+              <div class="quest-year">2022.03</div>
               <div>
                 <h3>東京工芸大学 芸術学部 ゲーム学科 卒業</h3>
                 <p>ゲーム制作や表現に関わる学びを土台にしています。</p>
               </div>
             </article>
-            <article class="timeline-item">
-              <p class="year">2022.04</p>
+            <article class="quest">
+              <div class="quest-year">2022.04</div>
               <div>
                 <h3>株式会社BREXA Technology 入社</h3>
                 <p>派遣先にてICT支援員として勤務。教育現場のIT活用を支援。</p>
               </div>
             </article>
-            <article class="timeline-item">
-              <p class="year">2023.04</p>
+            <article class="quest">
+              <div class="quest-year">2023.04</div>
               <div>
                 <h3>部署移動</h3>
                 <p>派遣先にて金融系システムエンジニアとして勤務、現在に至る。</p>
@@ -116,30 +115,33 @@
         </div>
       </section>
 
-      <section id="works" class="section">
+      <section class="game-section" id="notes">
         <div class="section-inner">
-          <div class="divider">
-            <p class="label">Notes</p>
-            <h2>公開できる経験から。</h2>
-            <p class="body-copy">
+          <div class="section-head">
+            <div>
+              <p class="section-label">Notes</p>
+              <h2>公開できる経験から。</h2>
+            </div>
+            <p>
               実名や場所を出せない仕事は、守秘したまま内容だけ伝える形に。
-              試作や制作メモも、積み重ねれば立派な活動記録になります。
+              <br>
+              試作や制作メモも、積み重ねれば活動記録になります。
             </p>
           </div>
 
-          <div class="cards">
-            <article class="note-card">
-              <span class="tag">Repair</span>
+          <div class="note-grid">
+            <article class="game-card">
+              <span>REPAIR</span>
               <h3>守秘案件の復旧対応</h3>
               <p>教育施設向けの監視カメラシステム修理を担当。</p>
             </article>
-            <article class="note-card">
-              <span class="tag">Setup</span>
+            <article class="game-card">
+              <span>SETUP</span>
               <h3>制作環境の構築</h3>
               <p>ローカルAI画像生成環境のセットアップや、ワークフロー調整を検証しながら進めています。</p>
             </article>
-            <article class="note-card">
-              <span class="tag">Writing</span>
+            <article class="game-card">
+              <span>WRITING</span>
               <h3>物語制作の整理</h3>
               <p>読み合わせ用シナリオの清書、構成整理、書き出しなど、制作物を形にする作業もしています。</p>
             </article>
@@ -147,20 +149,20 @@
         </div>
       </section>
 
-      <section id="contact" class="section">
-        <div class="contact-panel">
+      <section class="game-section contact-section" id="contact">
+        <div class="section-inner contact-panel">
           <div>
-            <p class="label">Contact</p>
+            <p class="section-label">Contact</p>
             <h2>次に作るものを話しましょう。</h2>
           </div>
-          <a href="mailto:hello@example.com">hello@example.com</a>
+          <a class="game-button primary" href="mailto:hello@example.com">hello@example.com</a>
         </div>
       </section>
 
-      <footer class="footer">
-        <div class="footer-inner">
+      <footer class="game-footer">
+        <div>
           <p>© huraneko</p>
-          <div class="footer-links">
+          <div>
             <a href="privacy-policy/">Privacy Policy</a>
             <a href="app-ads.txt">app-ads.txt</a>
           </div>

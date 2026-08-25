@@ -247,6 +247,13 @@ h1 span {
   color: var(--ice);
 }
 
+.email-link {
+  font-family: Consolas, "Cascadia Mono", "SFMono-Regular", monospace;
+  font-variant-numeric: slashed-zero;
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
 .status-window,
 .quest,
 .game-card,

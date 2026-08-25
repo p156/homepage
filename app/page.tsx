@@ -203,7 +203,10 @@ export default function Home() {
             <p className="section-label">Contact</p>
             <h2>次のクエストを相談する。</h2>
           </div>
-          <a className="game-button primary" href="mailto:huraneko1714@gmail.com">
+          <a
+            className="game-button primary email-link"
+            href="mailto:huraneko1714@gmail.com"
+          >
             huraneko1714@gmail.com
           </a>
         </div>

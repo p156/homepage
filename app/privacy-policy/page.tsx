@@ -83,8 +83,8 @@ export default function PrivacyPolicy() {
           <section className="privacy-card">
             <h2>お問い合わせ</h2>
             <p>本ポリシーに関するお問い合わせは、下記の連絡先までお願いいたします。</p>
-            <a className="game-button primary" href="mailto:hello@example.com">
-              hello@example.com
+            <a className="game-button primary" href="mailto:huraneko1714@gmail.com">
+              huraneko1714@gmail.com
             </a>
           </section>
         </div>

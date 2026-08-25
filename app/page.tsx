@@ -1,19 +1,25 @@
 const notes = [
   {
+    title: "ツミタスク",
+    description:
+      "積み上がるタスクを見える化し、日々の行動に落とし込むためのタスク管理アプリを制作。",
+    tag: "APP",
+  },
+  {
     title: "守秘案件の復旧対応",
-    description: "教育施設向けの監視カメラシステム修理を担当。",
+    description: "教育施設向けの監視カメラシステムを調査し、復旧まで担当。",
     tag: "REPAIR",
   },
   {
-    title: "制作環境の構築",
+    title: "環境の構築",
     description:
-      "ローカルAI画像生成環境のセットアップや、ワークフロー調整を検証しながら進めています。",
+      "ローカル環境やPC組み立て等、あなたの第一歩のお手伝いをしています。",
     tag: "SETUP",
   },
   {
     title: "物語制作の整理",
     description:
-      "読み合わせ用シナリオの清書、構成整理、書き出しなど、制作物を形にする作業もしています。",
+      "TRPGシナリオの清書や情報整理など、物語を遊べる形から売れる形へ整えています。",
     tag: "WRITING",
   },
 ];
@@ -68,7 +74,7 @@ export default function Home() {
               <span>遊べる形へ。</span>
             </h1>
             <p className="game-lead">
-              物語、画像、Web、ローカル環境。
+              物語、画像、Web、さまざまな環境。
               <br />
               作りたいものの輪郭をつかみ、
               試しながら少しずつ形にしていく
@@ -98,7 +104,7 @@ export default function Home() {
               />
             </div>
             <h2>フラネコ</h2>
-            <p>ゲーム表現とシステム開発のあいだで、作る力を育成中。</p>
+            <p>ゲーム表現とシステム開発のあいだを探索しながら、作る力を育成中。</p>
             <div className="stat-grid">
               {stats.map(([label, value]) => (
                 <div className="stat" key={label}>
@@ -116,13 +122,14 @@ export default function Home() {
           <p className="section-label">About</p>
           <div>
             <h2>
-              まだ曖昧な構想でも、
+              思いついたら、
               <br />
-              まずは動く形にしてみる。
+              まず小さく動かしてみる。
             </h2>
             <p className="section-copy">
-              このページはテスト用の初稿です。公開できる範囲の経験だけを載せながら、
-              プロフィール写真、好きなこと、制作メモ、SNSリンクなどで少しずつ育てられます。
+              まだ完成形じゃなくても、まずは置いて、見て、直していく。
+              <br />
+              このページも制作メモや好きなことを足しながら、少しずつ育てていきます。
             </p>
           </div>
         </div>
@@ -133,11 +140,16 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="section-label">Quest Log</p>
-              <h2>これまでの歩み</h2>
+              <h2>
+                これまでの
+                <br />
+                クエストログ
+              </h2>
             </div>
             <p>
-              学びから現場支援、金融系システムエンジニアへ。公開できる範囲で、
-              経歴と実務経験を整理しています。
+              ゲーム制作の学びから、教育現場の支援、金融系システム開発へ。
+              <br />
+              進んできたルートを、公開できる範囲でログ化しています。
             </p>
           </div>
 
@@ -160,12 +172,16 @@ export default function Home() {
           <div className="section-head">
             <div>
               <p className="section-label">Notes</p>
-              <h2>公開できる経験から。</h2>
+              <h2>
+              小さな実績も、
+              <br />
+              冒険のログに。
+              </h2>
             </div>
             <p>
-              実名や場所を出せない仕事は、守秘したまま内容だけ伝える形に。
+              いろいろな仕事も、できることだけをログに残す。
               <br />
-              試作や制作メモも、積み重ねれば活動記録になります。
+              試作や制作メモも、積み重ねればちゃんと冒険の記録になる。
             </p>
           </div>
 
@@ -185,10 +201,10 @@ export default function Home() {
         <div className="section-inner contact-panel">
           <div>
             <p className="section-label">Contact</p>
-            <h2>次に作るものを話しましょう。</h2>
+            <h2>次のクエストを相談する。</h2>
           </div>
-          <a className="game-button primary" href="mailto:hello@example.com">
-            hello@example.com
+          <a className="game-button primary" href="mailto:huraneko1714@gmail.com">
+            huraneko1714@gmail.com
           </a>
         </div>
       </section>

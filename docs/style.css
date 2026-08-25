@@ -52,6 +52,7 @@ a {
 
 .game-page::before,
 .privacy-page::before {
+  animation: rune-drift 18s linear infinite;
   background-image:
     linear-gradient(rgba(90, 244, 223, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(90, 244, 223, 0.055) 1px, transparent 1px);
@@ -65,6 +66,7 @@ a {
 
 .game-page::after,
 .privacy-page::after {
+  animation: cave-pulse 8s ease-in-out infinite;
   background:
     radial-gradient(circle at 50% 0%, transparent 0%, rgba(0, 0, 0, 0.72) 74%),
     repeating-linear-gradient(135deg, rgba(247, 255, 255, 0.025) 0 2px, transparent 2px 16px);
@@ -102,6 +104,7 @@ a {
 
 .game-nav {
   align-items: center;
+  animation: nav-glow 5.4s ease-in-out infinite;
   background: rgba(2, 6, 7, 0.78);
   border: 3px solid var(--aqua);
   border-radius: 24px;
@@ -148,6 +151,7 @@ a {
 
 .game-kicker,
 .section-label {
+  animation: label-flicker 3.6s ease-in-out infinite;
   color: var(--aqua);
   font-size: 13px;
   font-weight: 900;
@@ -214,8 +218,23 @@ h1 span {
   font-weight: 900;
   justify-content: center;
   min-height: 48px;
+  overflow: hidden;
   padding: 12px 22px;
+  position: relative;
   text-transform: uppercase;
+}
+
+.game-button::after {
+  animation: button-sheen 3.2s ease-in-out infinite;
+  background: linear-gradient(115deg, transparent 0%, rgba(247, 255, 255, 0.72) 48%, transparent 100%);
+  content: "";
+  height: 160%;
+  left: -90%;
+  opacity: 0.7;
+  position: absolute;
+  top: -30%;
+  transform: rotate(12deg);
+  width: 56%;
 }
 
 .game-button.primary {
@@ -233,6 +252,7 @@ h1 span {
 .game-card,
 .contact-panel,
 .privacy-card {
+  animation: frame-glow 4.2s ease-in-out infinite;
   background:
     linear-gradient(180deg, rgba(22, 38, 41, 0.94), rgba(4, 8, 9, 0.96)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 12px);
@@ -264,6 +284,7 @@ h1 span {
 
 .avatar-tile {
   align-items: center;
+  animation: icon-float 4s ease-in-out infinite;
   aspect-ratio: 1;
   background:
     radial-gradient(circle at 50% 42%, rgba(90, 244, 223, 0.32), transparent 42%),
@@ -410,12 +431,119 @@ h3 {
 
 .game-card {
   min-height: 260px;
-  transition: transform 160ms ease, border-color 160ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .game-card:hover {
   border-color: var(--pink);
+  box-shadow:
+    0 0 0 4px var(--ink),
+    0 0 0 8px rgba(247, 255, 255, 0.82),
+    0 0 34px rgba(255, 127, 154, 0.32),
+    0 30px 60px rgba(0, 0, 0, 0.54),
+    inset 0 0 44px rgba(0, 0, 0, 0.42);
   transform: translateY(-4px);
+}
+
+@keyframes rune-drift {
+  from {
+    background-position: 0 0, 0 0;
+  }
+
+  to {
+    background-position: 72px 36px, 36px 72px;
+  }
+}
+
+@keyframes cave-pulse {
+  0%,
+  100% {
+    opacity: 0.92;
+  }
+
+  50% {
+    opacity: 0.66;
+  }
+}
+
+@keyframes nav-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px var(--ink),
+      0 0 0 6px rgba(247, 255, 255, 0.78),
+      0 0 22px rgba(90, 244, 223, 0.32),
+      0 18px 40px rgba(0, 0, 0, 0.44);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 3px var(--ink),
+      0 0 0 6px rgba(247, 255, 255, 0.9),
+      0 0 38px rgba(90, 244, 223, 0.58),
+      0 18px 40px rgba(0, 0, 0, 0.44);
+  }
+}
+
+@keyframes frame-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px var(--ink),
+      0 0 0 8px rgba(247, 255, 255, 0.82),
+      0 0 24px rgba(90, 244, 223, 0.3),
+      0 26px 54px rgba(0, 0, 0, 0.5),
+      inset 0 0 44px rgba(0, 0, 0, 0.42);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 4px var(--ink),
+      0 0 0 8px rgba(247, 255, 255, 0.9),
+      0 0 42px rgba(90, 244, 223, 0.48),
+      0 26px 54px rgba(0, 0, 0, 0.5),
+      inset 0 0 54px rgba(90, 244, 223, 0.08);
+  }
+}
+
+@keyframes icon-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes label-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(90, 244, 223, 0.62);
+  }
+
+  45% {
+    opacity: 0.72;
+    text-shadow: 0 0 24px rgba(90, 244, 223, 0.95);
+  }
+
+  52% {
+    opacity: 1;
+  }
+}
+
+@keyframes button-sheen {
+  0%,
+  35% {
+    left: -90%;
+  }
+
+  70%,
+  100% {
+    left: 135%;
+  }
 }
 
 .game-card span {

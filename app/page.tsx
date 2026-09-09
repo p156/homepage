@@ -1,3 +1,6 @@
+import ScrollMotion from "./scroll-motion";
+import ParticlePortal from "./particle-portal";
+
 const notes = [
   {
     title: "ツミタスク",
@@ -6,8 +9,8 @@ const notes = [
     tag: "APP",
   },
   {
-    title: "守秘案件の復旧対応",
-    description: "教育施設向けの監視カメラシステムを調査し、復旧まで担当。",
+    title: "監視カメラの復旧対応",
+    description: "監視カメラシステムを調査し、復旧まで担当。",
     tag: "REPAIR",
   },
   {
@@ -44,16 +47,17 @@ const career = [
 ];
 
 const stats = [
-  ["FOCUS", "Web / App"],
-  ["CLASS", "Engineer"],
-  ["STYLE", "Game Design"],
+  ["制作", "Web / App"],
+  ["役割", "Engineer"],
+  ["原点", "Game Design"],
 ];
 
 export default function Home() {
   return (
     <main className="game-page">
+      <ScrollMotion />
       <section className="game-hero" id="top">
-        <nav className="game-nav">
+        <nav className="game-nav" aria-label="メインナビゲーション">
           <a className="game-brand" href="#top">
             huraneko
           </a>
@@ -68,7 +72,7 @@ export default function Home() {
 
         <div className="game-shell">
           <div className="game-copy">
-            <p className="game-kicker">PLAYER PROFILE / FIRST SAVE</p>
+            <p className="game-kicker">フラネコの最初のセーブ</p>
             <h1>
               アイデアを、
               <span>遊べる形へ。</span>
@@ -81,6 +85,11 @@ export default function Home() {
               <br />
               フラネコのホームページです。
             </p>
+            <ol className="process-route" aria-label="制作の進め方">
+              <li>発想</li>
+              <li>試作</li>
+              <li>更新</li>
+            </ol>
             <div className="game-actions">
               <a className="game-button primary" href="#career">
                 経歴を見る
@@ -91,33 +100,44 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="status-window" aria-label="フラネコのステータス">
-            <div className="window-bar">
-              <span>STATUS</span>
-              <span>LV. 2026</span>
+          <aside className="portal-stage" aria-label="フラネコのステータス">
+            <ParticlePortal />
+            <div className="portal-ring" aria-hidden="true" />
+            <div className="status-window">
+              <div className="window-bar">
+                <span>探索者データ</span>
+                <span>現在地 / 制作中</span>
+              </div>
+              <div className="avatar-tile">
+                {/* Keep the supplied artwork untouched instead of routing it through image optimization. */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  alt="フラネコのアイコン"
+                  className="avatar-image"
+                  src="/images/huraneko-icon.png"
+                />
+              </div>
+              <div className="status-copy">
+                <h2>フラネコ</h2>
+                <p>ゲーム表現とシステム開発のあいだを探索しながら、作る力を育成中。</p>
+              </div>
+              <div className="stat-grid">
+                {stats.map(([label, value]) => (
+                  <div className="stat" key={label}>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="avatar-tile">
-              <img
-                alt="フラネコのアイコン"
-                className="avatar-image"
-                src="/images/huraneko-icon.png"
-              />
-            </div>
-            <h2>フラネコ</h2>
-            <p>ゲーム表現とシステム開発のあいだを探索しながら、作る力を育成中。</p>
-            <div className="stat-grid">
-              {stats.map(([label, value]) => (
-                <div className="stat" key={label}>
-                  <span>{label}</span>
-                  <strong>{value}</strong>
-                </div>
-              ))}
-            </div>
+            <p className="depth-readout" aria-hidden="true">
+              深度 <span>000</span>
+            </p>
           </aside>
         </div>
       </section>
 
-      <section className="game-section dark" id="about">
+      <section className="game-section dark" id="about" data-scroll-scene>
         <div className="section-inner about-center">
           <p className="section-label">About</p>
           <div>
@@ -135,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="game-section" id="career">
+      <section className="game-section" id="career" data-scroll-scene>
         <div className="section-inner">
           <div className="section-head">
             <div>
@@ -154,8 +174,11 @@ export default function Home() {
           </div>
 
           <div className="quest-list">
-            {career.map((item) => (
+            {career.map((item, index) => (
               <article className="quest" key={item.year}>
+                <div className="quest-marker" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
                 <div className="quest-year">{item.year}</div>
                 <div>
                   <h3>{item.title}</h3>
@@ -167,15 +190,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="game-section" id="notes">
+      <section className="game-section" id="notes" data-scroll-scene>
         <div className="section-inner">
           <div className="section-head">
             <div>
               <p className="section-label">Notes</p>
               <h2>
-              小さな実績も、
-              <br />
-              冒険のログに。
+                小さな実績も、
+                <br />
+                冒険のログに。
               </h2>
             </div>
             <p>
@@ -197,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="game-section contact-section" id="contact">
+      <section className="game-section contact-section" id="contact" data-scroll-scene>
         <div className="section-inner contact-panel">
           <div>
             <p className="section-label">Contact</p>

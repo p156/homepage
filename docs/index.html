@@ -10,12 +10,13 @@
     <meta property="og:image" content="images/huraneko-icon.png">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=20260826-1">
+    <link rel="stylesheet" href="style.css?v=20260910-deep-savepoint">
+    <script src="motion.js?v=20260910-deep-savepoint" defer></script>
   </head>
   <body>
     <main class="game-page">
       <section class="game-hero" id="top">
-        <nav class="game-nav">
+        <nav class="game-nav" aria-label="メインナビゲーション">
           <a class="game-brand" href="#top">huraneko</a>
           <div class="game-nav-links">
             <a href="#about">About</a>
@@ -28,7 +29,7 @@
 
         <div class="game-shell">
           <div class="game-copy">
-            <p class="game-kicker">PLAYER PROFILE / FIRST SAVE</p>
+            <p class="game-kicker">フラネコの最初のセーブ</p>
             <h1>アイデアを、<span>遊べる形へ。</span></h1>
             <p class="game-lead">
               物語、画像、Web、さまざまな環境。
@@ -38,32 +39,44 @@
               <br>
               フラネコのホームページです。
             </p>
+            <ol class="process-route" aria-label="制作の進め方">
+              <li>発想</li>
+              <li>試作</li>
+              <li>更新</li>
+            </ol>
             <div class="game-actions">
               <a class="game-button primary" href="#career">経歴を見る</a>
               <a class="game-button secondary" href="#notes">活動メモ</a>
             </div>
           </div>
 
-          <aside class="status-window" aria-label="フラネコのステータス">
-            <div class="window-bar">
-              <span>STATUS</span>
-              <span>LV. 2026</span>
+          <aside class="portal-stage" aria-label="フラネコのステータス">
+            <canvas class="portal-canvas" aria-hidden="true"></canvas>
+            <div class="portal-ring" aria-hidden="true"></div>
+            <div class="status-window">
+              <div class="window-bar">
+                <span>探索者データ</span>
+                <span>現在地 / 制作中</span>
+              </div>
+              <div class="avatar-tile">
+                <img class="avatar-image" alt="フラネコのアイコン" src="images/huraneko-icon.png">
+              </div>
+              <div class="status-copy">
+                <h2>フラネコ</h2>
+                <p>ゲーム表現とシステム開発のあいだを探索しながら、作る力を育成中。</p>
+              </div>
+              <div class="stat-grid">
+                <div class="stat"><span>制作</span><strong>Web / App</strong></div>
+                <div class="stat"><span>役割</span><strong>Engineer</strong></div>
+                <div class="stat"><span>原点</span><strong>Game Design</strong></div>
+              </div>
             </div>
-            <div class="avatar-tile">
-              <img class="avatar-image" alt="フラネコのアイコン" src="images/huraneko-icon.png">
-            </div>
-            <h2>フラネコ</h2>
-            <p>ゲーム表現とシステム開発のあいだを探索しながら、作る力を育成中。</p>
-            <div class="stat-grid">
-              <div class="stat"><span>FOCUS</span><strong>Web / App</strong></div>
-              <div class="stat"><span>CLASS</span><strong>Engineer</strong></div>
-              <div class="stat"><span>STYLE</span><strong>Game Design</strong></div>
-            </div>
+            <p class="depth-readout" aria-hidden="true">深度 <span>000</span></p>
           </aside>
         </div>
       </section>
 
-      <section class="game-section dark" id="about">
+      <section class="game-section dark" id="about" data-scroll-scene>
         <div class="section-inner about-center">
           <p class="section-label">About</p>
           <div>
@@ -77,7 +90,7 @@
         </div>
       </section>
 
-      <section class="game-section" id="career">
+      <section class="game-section" id="career" data-scroll-scene>
         <div class="section-inner">
           <div class="section-head">
             <div>
@@ -93,6 +106,7 @@
 
           <div class="quest-list">
             <article class="quest">
+              <div class="quest-marker" aria-hidden="true">01</div>
               <div class="quest-year">2022.03</div>
               <div>
                 <h3>東京工芸大学 芸術学部 ゲーム学科 卒業</h3>
@@ -100,6 +114,7 @@
               </div>
             </article>
             <article class="quest">
+              <div class="quest-marker" aria-hidden="true">02</div>
               <div class="quest-year">2022.04</div>
               <div>
                 <h3>株式会社BREXA Technology 入社</h3>
@@ -107,6 +122,7 @@
               </div>
             </article>
             <article class="quest">
+              <div class="quest-marker" aria-hidden="true">03</div>
               <div class="quest-year">2023.04</div>
               <div>
                 <h3>部署移動</h3>
@@ -117,7 +133,7 @@
         </div>
       </section>
 
-      <section class="game-section" id="notes">
+      <section class="game-section" id="notes" data-scroll-scene>
         <div class="section-inner">
           <div class="section-head">
             <div>
@@ -139,8 +155,8 @@
             </article>
             <article class="game-card">
               <span>REPAIR</span>
-              <h3>守秘案件の復旧対応</h3>
-              <p>教育施設向けの監視カメラシステムを調査し、復旧まで担当。</p>
+              <h3>監視カメラの復旧対応</h3>
+              <p>監視カメラシステムを調査し、復旧まで担当。</p>
             </article>
             <article class="game-card">
               <span>SETUP</span>
@@ -156,7 +172,7 @@
         </div>
       </section>
 
-      <section class="game-section contact-section" id="contact">
+      <section class="game-section contact-section" id="contact" data-scroll-scene>
         <div class="section-inner contact-panel">
           <div>
             <p class="section-label">Contact</p>

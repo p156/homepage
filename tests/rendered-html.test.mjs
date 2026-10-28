@@ -39,6 +39,10 @@ test("renders the huraneko homepage", async () => {
   assert.match(html, /深度/);
   assert.match(html, /huraneko1714@gmail\.com/);
   assert.match(html, /images\/huraneko-icon\.png/);
+  assert.match(
+    html,
+    /https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.neko\.tsumitask/,
+  );
 });
 
 test("keeps the app and static homepage in sync", async () => {
@@ -60,6 +64,7 @@ test("keeps the app and static homepage in sync", async () => {
     assert.match(text, /更新/);
     assert.match(text, /探索者データ/);
     assert.match(text, /ツミタスク/);
+    assert.match(text, /Google Playで見る/);
   }
 
   assert.equal(appCss, staticCss);

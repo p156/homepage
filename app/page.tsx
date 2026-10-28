@@ -7,6 +7,7 @@ const notes = [
     description:
       "積み上がるタスクを見える化し、日々の行動に落とし込むためのタスク管理アプリを制作。",
     tag: "APP",
+    href: "https://play.google.com/store/apps/details?id=com.neko.tsumitask",
   },
   {
     title: "監視カメラの復旧対応",
@@ -209,13 +210,27 @@ export default function Home() {
           </div>
 
           <div className="note-grid">
-            {notes.map((note) => (
-              <article className="game-card" key={note.title}>
-                <span>{note.tag}</span>
-                <h3>{note.title}</h3>
-                <p>{note.description}</p>
-              </article>
-            ))}
+            {notes.map((note) => {
+              const Card = note.href ? "a" : "article";
+
+              return (
+                <Card
+                  aria-label={note.href ? `${note.title}をGoogle Playで見る` : undefined}
+                  className={`game-card${note.href ? " game-card-link" : ""}`}
+                  href={note.href}
+                  key={note.title}
+                  rel={note.href ? "noopener noreferrer" : undefined}
+                  target={note.href ? "_blank" : undefined}
+                >
+                  <span className="card-tag">{note.tag}</span>
+                  <h3>{note.title}</h3>
+                  <p>{note.description}</p>
+                  {note.href && (
+                    <span className="card-link-label">Google Playで見る</span>
+                  )}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

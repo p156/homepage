@@ -283,8 +283,10 @@ h3 { color: #fff; font-size: 23px; font-weight: 500; line-height: 1.35; margin-b
 .game-card {
   background: var(--kelp);
   border-radius: 8px;
+  display: block;
   min-height: 260px;
   padding: 34px;
+  position: relative;
   transition: background-color 180ms ease, transform 180ms ease;
 }
 .game-card:nth-child(1) { grid-column: span 7; }
@@ -292,9 +294,12 @@ h3 { color: #fff; font-size: 23px; font-weight: 500; line-height: 1.35; margin-b
 .game-card:nth-child(3) { grid-column: span 5; margin-top: 34px; }
 .game-card:nth-child(4) { grid-column: span 7; }
 .game-card:hover { background: var(--kelp-soft); transform: translateY(-3px); }
-.game-card > span { color: var(--aqua); display: block; font-family: var(--font-geist-mono), Consolas, monospace; font-size: 11px; margin-bottom: 58px; }
-.game-card > span::before { background: var(--pink); content: ""; display: inline-block; height: 6px; margin-right: 9px; transform: rotate(45deg); width: 6px; }
+.game-card-link:focus-visible { outline: 2px solid var(--aqua); outline-offset: 4px; }
+.card-tag { color: var(--aqua); display: block; font-family: var(--font-geist-mono), Consolas, monospace; font-size: 11px; margin-bottom: 58px; }
+.card-tag::before { background: var(--pink); content: ""; display: inline-block; height: 6px; margin-right: 9px; transform: rotate(45deg); width: 6px; }
 .game-card p { margin-bottom: 0; max-width: 580px; }
+.card-link-label { bottom: 30px; color: var(--aqua); font-size: 12px; font-weight: 500; position: absolute; right: 34px; }
+.card-link-label::after { content: "↗"; margin-left: 8px; }
 
 .contact-section { background: var(--deepest); padding-bottom: 64px; padding-top: 64px; }
 .contact-panel {

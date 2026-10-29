@@ -58,6 +58,7 @@ export default function PrivacyPolicy() {
           </Link>
           <div className="game-nav-links">
             <Link href="/">Home</Link>
+            <Link href="/terms">Terms</Link>
           </div>
         </nav>
 

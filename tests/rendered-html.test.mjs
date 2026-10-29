@@ -39,6 +39,7 @@ test("renders the huraneko homepage", async () => {
   assert.match(html, /深度/);
   assert.match(html, /huraneko1714@gmail\.com/);
   assert.match(html, /images\/huraneko-icon\.png/);
+  assert.match(html, /href="\/terms"/);
   assert.match(
     html,
     /https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.neko\.tsumitask/,
@@ -88,4 +89,32 @@ test("renders the privacy policy", async () => {
   assert.match(html, /<title>プライバシーポリシー \| フラネコ<\/title>/);
   assert.match(html, /広告配信について/);
   assert.match(html, /huraneko1714@gmail\.com/);
+  assert.match(html, /href="\/terms"/);
+});
+
+test("renders the terms of service and keeps the static page in sync", async () => {
+  const response = await render("/terms");
+  assert.equal(response.status, 200);
+
+  const [html, appTerms, staticTerms] = await Promise.all([
+    response.text(),
+    readFile(new URL("../app/terms/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../docs/terms/index.html", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(html, /<title>利用規約 \| フラネコ<\/title>/);
+  assert.match(html, /アプリ、Botその他のサービス/);
+  assert.match(html, /消費者契約法/);
+  assert.match(html, /huraneko1714@gmail\.com/);
+  assert.match(html, /href="\/privacy-policy"/);
+
+  for (const text of [appTerms, staticTerms]) {
+    assert.match(text, /適用範囲/);
+    assert.match(text, /自動処理と出力/);
+    assert.match(text, /禁止事項/);
+    assert.match(text, /有料機能/);
+    assert.match(text, /保証と責任/);
+    assert.match(text, /準拠法と裁判管轄/);
+    assert.match(text, /制定日: 2026年10月29日/);
+  }
 });

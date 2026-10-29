@@ -68,6 +68,7 @@ export default function Home() {
             <a href="#notes">Notes</a>
             <a href="#contact">Contact</a>
             <a href="/privacy-policy">Privacy</a>
+            <a href="/terms">Terms</a>
           </div>
         </nav>
 
@@ -254,6 +255,7 @@ export default function Home() {
         <div>
           <p>© huraneko</p>
           <div>
+            <a href="/terms">Terms of Service</a>
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/app-ads.txt">app-ads.txt</a>
           </div>

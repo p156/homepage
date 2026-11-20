@@ -8,6 +8,15 @@ const notes = [
       "積み上がるタスクを見える化し、日々の行動に落とし込むためのタスク管理アプリを制作。",
     tag: "APP",
     href: "https://play.google.com/store/apps/details?id=com.neko.tsumitask",
+    linkLabel: "Google Playで見る",
+  },
+  {
+    title: "AI Project OS",
+    description:
+      "個人プロジェクトを小さな作業に分け、目標・次の一手・資料・AIの結果をひとつの作業ボードで管理するWindowsアプリ。",
+    tag: "WINDOWS APP",
+    href: "https://github.com/p156/ai-project-os/tree/main",
+    linkLabel: "GitHubで見る",
   },
   {
     title: "監視カメラの復旧対応",
@@ -216,7 +225,7 @@ export default function Home() {
 
               return (
                 <Card
-                  aria-label={note.href ? `${note.title}をGoogle Playで見る` : undefined}
+                  aria-label={note.href ? `${note.title}を${note.linkLabel}` : undefined}
                   className={`game-card${note.href ? " game-card-link" : ""}`}
                   href={note.href}
                   key={note.title}
@@ -227,7 +236,7 @@ export default function Home() {
                   <h3>{note.title}</h3>
                   <p>{note.description}</p>
                   {note.href && (
-                    <span className="card-link-label">Google Playで見る</span>
+                    <span className="card-link-label">{note.linkLabel}</span>
                   )}
                 </Card>
               );

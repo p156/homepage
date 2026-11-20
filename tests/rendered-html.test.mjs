@@ -44,6 +44,7 @@ test("renders the huraneko homepage", async () => {
     html,
     /https:\/\/play\.google\.com\/store\/apps\/details\?id=com\.neko\.tsumitask/,
   );
+  assert.match(html, /https:\/\/github\.com\/p156\/ai-project-os\/tree\/main/);
 });
 
 test("keeps the app and static homepage in sync", async () => {
@@ -66,6 +67,8 @@ test("keeps the app and static homepage in sync", async () => {
     assert.match(text, /探索者データ/);
     assert.match(text, /ツミタスク/);
     assert.match(text, /Google Playで見る/);
+    assert.match(text, /AI Project OS/);
+    assert.match(text, /GitHubで見る/);
   }
 
   assert.equal(appCss, staticCss);

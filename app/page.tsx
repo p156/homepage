@@ -19,6 +19,14 @@ const notes = [
     linkLabel: "GitHubで見る",
   },
   {
+    title: "体験型イベントまとめ",
+    description:
+      "イマーシブ、脱出ゲーム、謎解き、マーダーミステリーなどの体験型イベントを全国から集め、開催状況・ジャンル・地域で探せるまとめサイト。",
+    tag: "WEB APP",
+    href: "https://p156.github.io/Event-search/",
+    linkLabel: "公開サイトで見る",
+  },
+  {
     title: "監視カメラの復旧対応",
     description: "監視カメラシステムを調査し、復旧まで担当。",
     tag: "REPAIR",
